@@ -22,6 +22,8 @@ export class TablaComponent {
   editar(id: number) {
     id = id;
     // console.log(id);
-    this.personaS.buscarPersona(id);
+    // this.personaS.buscarPersona(id);
   }
+
+
 }

@@ -6,7 +6,7 @@ import { personainterface } from '../interfaces/persona.interfaces';
 })
 export class FormularioServiceService {
   private _personasArray: personainterface[] = [];
-  private personaEditaInfo: any = '';
+  private personaInfo: any = '';
 
   constructor() {}
 
@@ -26,23 +26,25 @@ export class FormularioServiceService {
     this._personasArray.splice(id, 1);
   }
 
-  buscarPersona(ide: number) {
-    // console.log(this._personasArray);
-    console.log(ide);
-    // let editp: any;
-
+  infoPersona(id: number) {
     for (let i = 0; i < this._personasArray.length; i++) {
-      if (this._personasArray[i].id == ide) {
-        this.personaEditaInfo = this._personasArray[i];
+      if (this._personasArray[i].id == id) {
+        this.personaInfo = this._personasArray[i];
+        // console.log(this.personaInfo);
       }
     }
-    // this.personaEditaInfo = this._personasArray.find((data) => {
-    //   data.id = ide;
-    // });
 
-    console.log(this.personaEditaInfo);
-    return this.personaEditaInfo;
+    return this.personaInfo;
   }
 
-  editarPersona() {}
+  editarPersona(data: personainterface) {
+    for (let i = 0; i < this._personasArray.length; i++) {
+      if (this._personasArray[i].id == data.id) {
+        this._personasArray[i].nombre = data.nombre;
+        this._personasArray[i].email = data.email;
+        this._personasArray[i].tel = data.tel;
+        this._personasArray[i].edad = data.edad;
+      }
+    }
+  }
 }

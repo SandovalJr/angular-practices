@@ -22,13 +22,13 @@
             <button
               class="btn btn-outline-warning mbotones"
               (click)="editar(persona.id)"
+              [routerLink]="['/edit', persona.id]"
+
             >
               Edit
             </button>
             <button
               class="btn btn-outline-danger"
-              (click)="eliminar(persona.id)"
-              routerLink=""
             >
               Delete
             </button>
