@@ -1,1 +1,57 @@
-<p>formulario works!</p>
+<h1 class="text-center mt-3">Agregar Personas</h1>
+
+<form (ngSubmit)="agregar()">
+  <div class="formulario mt-5">
+    <div class="row">
+      <div class="col-6">
+        <label>Nombre Completo:</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nombre Completo"
+          name="nombre"
+          [(ngModel)]="nuevo.nombre"
+        />
+      </div>
+      <div class="col-6">
+        <label> Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          name="email"
+          [(ngModel)]="nuevo.email"
+        />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <label>Telefono:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Telefono"
+          name="tel"
+          [(ngModel)]="nuevo.tel"
+        />
+      </div>
+      <div class="col-6">
+        <label> Edad:</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Direccion"
+          name="edad"
+          [(ngModel)]="nuevo.edad"
+        />
+      </div>
+    </div>
+
+    <div class="cbtn">
+      <button class="btn btn-outline-info" type="submit">Agregar</button>
+    </div>
+  </div>
+</form>
+
+<app-tabla ></app-tabla>
